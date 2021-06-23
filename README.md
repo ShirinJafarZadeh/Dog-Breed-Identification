@@ -18,4 +18,8 @@ We're going to go through the following TensorFlow/Deep Learning workflow:
 
 For preprocessing our data, we're going to use TensorFlow 2.x. The whole premise here is to get our data into Tensors (arrays of numbers which can be run on GPUs) and then allow a machine learning model to find patterns between them.
 
-For our machine learning model, we're going to be using a pretrained deep learning model from TensorFlow Hub.
+For our machine learning model, we're going to use sequential API in Keras.
+
+The first layer we use is the model from TensorFlow Hub (hub.KerasLayer(MODEL_URL). So our first layer is actually an entire model (many more layers). That input layer takes in the images and finds patterns in them based on the patterns mobilenet_v2_130_224 (chosen model for training) has found.
+
+The next layer (tf.keras.layers.Dense()) is the output layer of my model. It brings all of the information discovered in the input layer together and outputs it in the shape we are after, 120 (the number of unique labels I had). In addition, we set the activation parameter to "softmax" that tells the output layer, I'd like to assign a probability value to each of the 120 labels somewhere between 0 & 1. The higher the value, the more the model believes the input image should have that label. Afterwards we compile the model and build it. Finally trained it and made predictions on test data.
