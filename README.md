@@ -15,7 +15,7 @@ To do this, we'll be using data from the [Kaggle dog breed identification compet
 
 This kind of problem is called multi-class image classification.
 
-Since the most important step in a deep learng problem is getting the data ready (turning it into numbers), that's what we're going to start with.
+Since the most important step in a deep learning problem is getting the data ready (turning it into numbers), that's what we're going to start with.
 
 We're going to go through the following TensorFlow/Deep Learning workflow:
 1. Get data ready (download from Kaggle, store, import).
